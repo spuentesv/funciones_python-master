@@ -115,9 +115,11 @@ def jugar_generala(inicio, fin, cantidad):
     replst.clear()
     dados_tirados.clear()
     tiradas = True
+    numero_tiradas = 0
     while tiradas == True:
 
         # Genera numeros aleatorios
+        numero_tiradas += 1
         trdlst = lista_aleatoria(inicio, fin, cantidad)  
  
         # Determina si hubo numeros repetidos y los carga en lista replst
@@ -152,14 +154,14 @@ def jugar_generala(inicio, fin, cantidad):
             # Si, hay dados tirados, ajustamos cantidad de datos disponibles
             if (len(dados_tirados) > 0):
                 replst = dados_tirados
-                cantidad = (6 - len(dados_tirados)) + 1   
+                cantidad = (6 - len(dados_tirados))    
 
             if (cantidad == 1):
                 tiradas = False   
         else:
             tiradas = False         
 
-    print('dados tirados', dados_tirados)                
+    print('Total tiradas:',numero_tiradas, ' dados tirados:', dados_tirados)                
                     
 # --------------------------------
 
